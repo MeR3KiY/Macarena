@@ -1,0 +1,45 @@
+<mat-card class="reg">
+  <mat-card-title class="title">Пройдите регистрацию</mat-card-title>
+
+
+  <div>
+    <mat-form-field appearance="fill" class="mail">
+      <mat-label>Адрес электронной почты</mat-label>
+      <input matInput placeholder="pat@example.com" [formControl]="email" required [(ngModel)]="mail">
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </div>
+
+<div>
+<mat-form-field appearance="standard" class="name">
+  <mat-label class="name_lab">Имя</mat-label>
+  <input matInput placeholder="Иван" class="name_lab" [(ngModel)]="name">
+</mat-form-field>
+</div>
+
+<div>
+<mat-form-field appearance="fill" class="password">
+  <mat-label>Пароль</mat-label>
+  <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="password">
+  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+  </button>
+</mat-form-field>
+</div>
+
+
+<div>
+<mat-form-field appearance="fill" class="password_conf">
+  <mat-label>Повторите пароль</mat-label>
+  <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="duplicate">
+</mat-form-field>
+</div>
+
+
+<div class="buttons">
+<button mat-raised-button color="primary" class="left" routerLink="">Вернуться</button>
+
+<button mat-raised-button color="primary" class="right" (click)="regUser()">Зарегистрироваться</button>
+</div>
+
+</mat-card>

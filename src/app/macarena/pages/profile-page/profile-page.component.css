@@ -1,0 +1,113 @@
+.main {
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 50px;
+  border: solid 1.5px black;
+  background-color: rgb(153, 95, 207);
+}
+
+.flex-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.exit-btn {
+  height: 40px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.message {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.friends-list {
+  width: 250px;
+  border: solid 1px black;
+}
+
+.list {
+  margin-bottom: 0;
+}
+
+.name, .mail {
+  font-size: 18px;
+}
+
+.mention {
+  border-radius: 5px;
+  max-width: 85px;
+  max-height: 30px;
+  font-size: 12px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.new-post {
+  border: solid 1px black;
+  height: 150px;
+  width: 400px;
+}
+
+.post-title {
+  text-align: center;
+}
+
+.post-form {
+  width: 400px;
+}
+
+.post-btn {
+  margin-left: 20px;
+}
+
+.btns {
+  margin-top: 19px;
+  text-align: right;
+}
+
+.post-list {
+  border: solid 1px black;
+  margin-top: 15px;
+}
+
+.user-post-title {
+  margin: 0 auto;
+}
+
+.postBorder {
+  border: solid 1px black;
+  word-wrap: break-word;
+  width: 480px;
+  margin: 0 auto;
+  padding: 10px;
+  margin-bottom: 15px;
+
+}
+
+.notification {
+  width: 100px;
+  border: solid 1px black;
+  border-radius: 7px;
+  background-color: crimson;
+  position: relative;
+  z-index: 20;
+  bottom: 150px;
+  left: 690px;
+}
+
+.personal {
+  margin-left: 10px;
+  margin-right: 160px;
+  cursor: pointer;
+  border: solid 1px black;
+  border-radius: 7px;
+  background-color: crimson;
+  color: #fff;
+  padding: 2px;
+}

@@ -1,0 +1,27 @@
+.reg {
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 80px;
+  text-align: center;
+  border: solid 1px black;
+}
+
+.title {
+  text-transform: uppercase;
+}
+
+.mail, .name, .password, .password_conf {
+  width: 300px;
+}
+
+.mail {
+  margin-bottom: -13px;
+}
+
+.name_lab {
+  padding: 0 0 0 10px;
+}
+
+.left {
+  margin-right: 33px;
+}

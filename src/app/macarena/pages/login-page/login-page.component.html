@@ -1,0 +1,35 @@
+<mat-card class="login">
+
+  <mat-card-title class="title">Macarena приветствует Вас!</mat-card-title>
+
+
+<div class="content">
+
+    <div class="example-container">
+      <mat-form-field appearance="fill" class="email">
+        <mat-label>Адрес электронной почты</mat-label>
+        <input matInput placeholder="pat@example.com" [formControl]="email" required [(ngModel)]="mail">
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+  <mat-form-field appearance="fill" class="password">
+    <mat-label>Пароль</mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="password">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+
+</div>
+
+<div class="buttons">
+
+<button mat-raised-button color="primary" class="left" routerLink="regpage">Регистрация</button>
+
+<button mat-raised-button color="primary" class="right" (click)="login()" routerLink="profile">Войти</button>
+
+</div>
+
+
+</mat-card>

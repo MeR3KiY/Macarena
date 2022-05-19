@@ -1,0 +1,57 @@
+<mat-card class="main">
+  <div class="flex-header">
+  <div class="message">
+    <mat-card-title> {{setTime()}} {{regName}} </mat-card-title>
+  </div>
+  <button mat-flat-button color="accent" class="exit-btn" routerLink="">Выйти</button>
+</div>
+
+
+<div class="flex">
+
+
+  <mat-card class="friends-list">
+      <h3 class="list">Список друзей:</h3>
+        <div class="item" *ngFor="let friend of friends">
+          <div class="friend"> <span class="name"> {{friend.name}} </span> <span class="mail"> {{friend.mail}} </span> <div class="btn"> <button class="mention" (click)="showSent()">Упомянуть</button></div> </div>
+
+          <div class="notification" *ngIf="userClick">
+            Вы упомянули {{regName}}
+          </div>
+
+        </div>
+  </mat-card>
+
+
+
+  <mat-card class="new-post">
+    <mat-card-title class="post-title">Запостите что-нибудь!</mat-card-title>
+
+    <form>
+      <mat-form-field class="post-form" appearance="fill">
+        <mat-label>Текст поста</mat-label>
+        <input matInput #message maxlength="350" placeholder="Macarena ждет Вашу историю" [(ngModel)]="text" [ngModelOptions]="{standalone: true}">
+        <mat-hint align="start"><strong>Не разглашайте личную информацию</strong> </mat-hint>
+        <mat-hint align="end">{{message.value.length}} / 350</mat-hint>
+      </mat-form-field>
+    </form>
+
+    <div class="btns">
+      <mat-checkbox class="example-margin" color="primary">Личный</mat-checkbox>
+      <button mat-flat-button color="primary" class="post-btn" (click)="createPost()">Опубликовать</button>
+    </div>
+
+  </mat-card>
+
+</div>
+
+<mat-card class="post-list">
+  <mat-card-title class="user-post-title"> <span class="personal" (click)="personalBtn()"> Личные </span>Ваши посты: </mat-card-title>
+  <div class="postList" *ngFor="let post of postsList">
+    <div class="post">
+      <mat-card class="postBorder">{{post.text}} </mat-card>
+    </div>
+  </div>
+</mat-card>
+
+</mat-card>
