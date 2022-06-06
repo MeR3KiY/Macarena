@@ -5,29 +5,30 @@
 
 <div class="content">
 
+  <form [formGroup]="loginGroup">
     <div class="example-container">
       <mat-form-field appearance="fill" class="email">
         <mat-label>Адрес электронной почты</mat-label>
-        <input matInput placeholder="pat@example.com" [formControl]="email" required [(ngModel)]="mail">
-        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        <input matInput placeholder="pat@example.com" required formControlName="email">
+        <mat-error *ngIf="loginGroup.controls['email'].invalid">{{getErrorMessage()}}</mat-error>
       </mat-form-field>
     </div>
 
-  <mat-form-field appearance="fill" class="password">
-    <mat-label>Пароль</mat-label>
-    <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="password">
-    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-    </button>
-  </mat-form-field>
-
+    <mat-form-field appearance="fill" class="password">
+      <mat-label>Пароль</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+  </form>
 </div>
 
 <div class="buttons">
 
 <button mat-raised-button color="primary" class="left" routerLink="regpage">Регистрация</button>
 
-<button mat-raised-button color="primary" class="right" (click)="login()" routerLink="profile">Войти</button>
+<button mat-raised-button color="primary" class="right" (click)="login()">Войти</button>
 
 </div>
 

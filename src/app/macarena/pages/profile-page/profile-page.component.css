@@ -73,11 +73,12 @@
 
 .post-list {
   border: solid 1px black;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .user-post-title {
   margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 .postBorder {
@@ -91,14 +92,14 @@
 }
 
 .notification {
-  width: 100px;
   border: solid 1px black;
   border-radius: 7px;
   background-color: crimson;
-  position: relative;
+  position: absolute;
   z-index: 20;
-  bottom: 150px;
-  left: 690px;
+  right: -16px;
+  top: -16px;
+  padding: 4px;
 }
 
 .personal {
@@ -110,4 +111,28 @@
   background-color: crimson;
   color: #fff;
   padding: 2px;
+}
+
+.edit-btn {
+  margin-left: 130px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.img {
+  margin-top: 20px;
+  margin-bottom: -20px;
+  width: 65px;
+  height: 65px;
+  border: solid 1px black;
+  border-radius: 7px;
+  background-color: #fff;
+}
+
+.img__input {
+  width: 60px;
+  height: 65px;
+  font-size: 7px;
+  padding-top: 25px;
+
 }

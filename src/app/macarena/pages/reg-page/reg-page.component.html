@@ -17,6 +17,15 @@
 </mat-form-field>
 </div>
 
+<div class="date">
+  <span class="date__title">День рождения:</span>
+
+  <input type="date" class="date__input"
+         value="2000-01-01"
+         min="1941-01-01" max= any
+         [(ngModel)]="bDate">
+</div>
+
 <div>
 <mat-form-field appearance="fill" class="password">
   <mat-label>Пароль</mat-label>

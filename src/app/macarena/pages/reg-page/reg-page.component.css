@@ -25,3 +25,17 @@
 .left {
   margin-right: 33px;
 }
+
+.date {
+  margin: 8px 0;
+}
+
+.date__title {
+  margin: 0 30px 0 0;
+  color: #6c6666;
+  font-size: 17px;
+}
+
+.date__input {
+  font-size: 17px;
+}

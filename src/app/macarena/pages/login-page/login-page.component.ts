@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RegService } from '../../services/reg.service';
 
 @Component({
@@ -12,14 +12,15 @@ import { RegService } from '../../services/reg.service';
 export class LoginPageComponent implements OnInit {
 
 //Material-parts//
-  email = new FormControl('', [Validators.required, Validators.email]);
+
 
   getErrorMessage() {
-    if (this.email.hasError('required')) {
+
+    if (this.loginGroup.controls['email'].hasError('required')) {
       return 'Введите корректный адрес';
     }
 
-    return this.email.hasError('email') ? 'Некорректный адрес почты' : '';
+    return this.loginGroup.get('email')?.hasError('email') ? 'Некорректный адрес почты' : '';
   }
 
   hide = true;
@@ -27,25 +28,33 @@ export class LoginPageComponent implements OnInit {
 
 //////////////////////////
 
-  mail: string = '';
-  password = '';
+loginGroup = new FormGroup({
+  password: new FormControl('', [Validators.required]),
+  email: new FormControl('', [Validators.required, Validators.email])
+})
 
   regMail: any = {};
   regPass: any = {};
 
-  constructor(private regService: RegService) { }
+  constructor(private regService: RegService, private router: Router) { }
 
   login() {
-    this.regMail = this.regService.getMail(this.mail);
-    this.regPass = this.regService.getPass(this.password);
-    if (this.mail == '' || this.password == '') {
-      alert ("Введите все данные!");
-      return
-    } else if (this.regMail.mail == this.mail && this.regPass.password == this.password) {
-      return alert("Success!")
-    } else {
-      return
+    if (this.loginGroup.invalid) {
+      return alert ("Заполните форму корректно!")
     }
+
+    const formValue = this.loginGroup.value;
+
+    this.regMail = this.regService.getMail(formValue.email);
+
+    if (!this.regMail) {
+      return alert ('Пользователя не существует!')
+    }
+
+    if (this.regMail.mail == formValue.email && this.regMail.password == formValue.password) {
+      this.router.navigateByUrl(`/profile/${this.regMail.id}`);
+    }
+
   }
 
 

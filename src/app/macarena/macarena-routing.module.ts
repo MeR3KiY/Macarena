@@ -7,7 +7,7 @@ import { RegPageComponent } from './pages/reg-page/reg-page.component';
 const routes: Routes = [
   { path: '', component: LoginPageComponent },
   { path: 'regpage', component: RegPageComponent},
-  { path: 'profile', component: ProfilePageComponent}
+  { path: 'profile/:id', component: ProfilePageComponent}
 ];
 
 @NgModule({

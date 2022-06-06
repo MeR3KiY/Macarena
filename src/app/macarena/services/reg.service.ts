@@ -6,20 +6,44 @@ import { User } from '../models/userReg.model';
 })
 export class RegService {
 
-  users: User[] = []
+  users: User[] = [
+    {
+      name: 'qwe',
+      mail: 'qwe@qwe.ru',
+      password: '1234',
+      duplicate: '1234',
+      id: 124
+    },
+    {
+      name: 'zxc',
+      mail: 'zxc@zxc.ru',
+      password: '1234',
+      duplicate: '1234',
+      id: 123
+    },
+    {
+      name: 'asd',
+      mail: 'asd@asd.ru',
+      password: '1234',
+      duplicate: '1234',
+      id: 122
+    }
+  ]
+
+
 
   idGenerator(max: number) {
     return Math.floor(Math.random() * max);
   }
 
 
-  addUser(mail: any, name: string, password: string, duplicate: string) {
+  addUser(mail: any, name: string, password: string, duplicate: string, ) {
     const newUser: User = {
       mail: mail,
       name: name,
       password: password,
       duplicate: duplicate,
-      id: this.idGenerator(1000)
+      id: this.idGenerator(1000),
     };
     if (mail == '' || name == '' || password == '' || duplicate =='') {
       return alert('Заполните все поля!')
@@ -42,18 +66,18 @@ export class RegService {
   }
 
   getMail(mail: string) {
-    const regMail = this.users.find(getMail => getMail.mail === mail);
-    return regMail;
+    const user = this.users.find(user => user.mail === mail);
+    return user;
   }
 
   getPass(password: string) {
-    const regPass = this.users.find(getPass => getPass.password === password);
-    return regPass;
+    const user = this.users.find(user => user.password === password);
+    return user;
   }
 
   getName(name: string) {
-    const regName = this.users.find(getName => getName.name === name);
-    return regName;
+    const user = this.users.find(user => user.name === name);
+    return user;
   }
 
   constructor() { }

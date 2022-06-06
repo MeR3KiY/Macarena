@@ -4,7 +4,7 @@ import { MacarenaComponent } from './macarena.component';
 import { MacarenaRoutingModule } from './macarena-routing.module';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegPageComponent } from './pages/reg-page/reg-page.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, } from '@angular/forms';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
@@ -14,7 +14,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { ProfilePostsComponent } from './pages/profile-page/profile-posts/profile-posts.component';
 
 
 @NgModule({
@@ -23,6 +25,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     LoginPageComponent,
     RegPageComponent,
     ProfilePageComponent,
+    ProfilePostsComponent,
   ],
   imports: [
     CommonModule,
@@ -36,7 +39,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatIconModule,
     MatButtonModule,
     MatListModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatExpansionModule,
+    MatDatepickerModule,
   ]
 })
 export class MacarenaModule { }

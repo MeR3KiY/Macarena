@@ -1,0 +1,19 @@
+
+<mat-card class="post-list">
+  <mat-card-title class="user-post-title"> <span class="personal" (click)="personalBtn()"> Личные </span>Ваши посты: </mat-card-title>
+
+
+    <div class="postList" *ngFor="let post of postsList">
+      <div class="post">
+        <mat-card class="postBorder">
+          {{post.text}}
+          <input type="text" *ngIf="editPostProp" value = {{post.text}} >
+      </mat-card>
+      <button mat-raised-button color="primary" class="edit-btn"> Редактировать
+        <mat-icon>edit</mat-icon>
+      </button>
+      </div>
+    </div>
+  </mat-card>
+
+
